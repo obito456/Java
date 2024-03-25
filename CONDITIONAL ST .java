@@ -6,11 +6,14 @@ public class hello {
     if(a<12){
       System.out.println("Child");
     }
-    else if(a<=25){
+    else if(a<=18){
       System.out.println("Teenager");
     }
-    else{
+    else if(a<=40){
       System.out.println("Adult");
+    }
+    else{
+      System.out.println("Old");
     }
     
   }
