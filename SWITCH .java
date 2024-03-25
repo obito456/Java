@@ -1,7 +1,7 @@
 public class hello {
     public static void main(String[] args) {
       
-      char x='c';
+      char x='k';
       switch (x){
         case 'a':
         System.out.println("app");
@@ -18,6 +18,8 @@ public class hello {
         case 'e':
         System.out.println("eagle");
         break;
+        default:
+        System.out.println("other");
       }
     }
 }
