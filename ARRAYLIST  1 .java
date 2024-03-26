@@ -8,5 +8,14 @@ public class hello {
     cars.add("Ford");
     cars.add("Mazda");
     System.out.println(cars);
+    System.out.println(cars.size());
+    System.out.println(cars.get(0));
+    cars.set(0, "Opel");
+    System.out.println(cars);
+    cars.remove(0);
+    System.out.println(cars);
+    cars.clear();
+    System.out.println(cars);
+    
   } 
 }
