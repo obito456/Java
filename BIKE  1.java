@@ -1,4 +1,4 @@
-public class carr {
+public class bike {
 
     String name="zx01r";
     String company="ninja";
@@ -14,7 +14,7 @@ public class carr {
 public class hello{
   public static void main(String[] args){
     
-    carr obj=new carr();
+    bike obj=new bike();
     System.out.println(obj.str());
 
   }
