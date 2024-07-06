@@ -6,7 +6,7 @@ public class pack {
     if (myObj.delete()) {
       System.out.println("File name: " + myObj.getName());
     } else {
-      System.out.println("The file does not exist.");
+      System.out.println("fails to delete.");
     }
   }
 }
