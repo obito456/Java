@@ -1,4 +1,4 @@
-public class Main {
+public class Solution {
 
     static class Node {
         int data;
@@ -10,12 +10,12 @@ public class Main {
         }
     }
 
-    public static void insertAtTail(Node head, int val) {
+    public static Node insertAtTail(Node head, int val) {
         Node n = new Node(val);
 
         if (head == null) {
             head = n;
-            return;
+            return head;
         }
 
         Node temp = head;
@@ -23,6 +23,7 @@ public class Main {
             temp = temp.next;
         }
         temp.next = n;
+        return head;
     }
 
     public static void display(Node head) {
@@ -36,10 +37,10 @@ public class Main {
 
     public static void main(String[] args) {
         Node head = null;
-        insertAtTail(head, 1);
-        insertAtTail(head, 2);
-        insertAtTail(head, 3);
-        insertAtTail(head, 4);
+        head = insertAtTail(head, 1);
+        head = insertAtTail(head, 2);
+        head = insertAtTail(head, 3);
+        head = insertAtTail(head, 4);
         display(head);
     }
 }
