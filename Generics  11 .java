@@ -17,5 +17,7 @@ public class Solution {
         Generic obj1=new Generic(10.5d);
         Double dob=(Double)obj1.getobj();
         System.out.println(dob);
+        // Integer integer=(Integer)obj1.getobj();
+        // System.out.println(integer);
     }
 }
