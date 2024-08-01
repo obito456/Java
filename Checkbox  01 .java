@@ -36,6 +36,7 @@ public class AFrame extends JFrame implements ActionListener{
         checkbox.setFocusable(false);
         checkbox.setFont(new Font("consolsa",Font.PLAIN,35));
         checkbox.setIcon(icon);
+        checkbox.setSelectedIcon(icon2);
 
         this.add(button);
         this.add(checkbox);
