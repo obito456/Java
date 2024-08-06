@@ -1,21 +1,21 @@
-class Notgen{
-  Object obj;
+class Car{
+    Object name;
 
-  public Notgen(Object obj){
-    this.obj=obj;
-  }
-  public Object getnotgen(){
-    return obj;
-  }
-  public void display(){
-     System.out.println(obj.getClass().getName());
-  }
+    public Car(Object name) {
+        this.name = name;
+    }
+    public Object getCar() {
+        return name;
+    }
+    public void display() {
+        System.out.println(name.getClass().getName());
+    }
 }
 
-public class pack {
-  public static void main(String[] args) {
-      Notgen nongen=new Notgen("vijay");
-      nongen.display();
-      System.out.println(nongen.obj);
-  }
+public class Solution {
+    public static void main(String[] args) {
+        Car obj = new Car("BMW");
+        obj.display();
+        System.out.println(obj.name);
+    }
 }
