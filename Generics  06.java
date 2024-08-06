@@ -1,31 +1,31 @@
-class Generic<X extends Number>{
-  X[] nums;
+class Car<X extends Number> {
+  X[] speed;
 
-  public Generic(X[] nums){
-    this.nums=nums;
+  public Car(X[] speed) {
+    this.speed = speed;
   }
-  double calavg(){
-    double sum=0d;
-    for(X num:nums){
-      sum=sum+num.doubleValue();
+
+  double calavg() {
+    double sum = 0d;
+    for (X num : speed) {
+      sum = sum + num.doubleValue();
     }
-    return sum / nums.length;
+    return sum / speed.length;
   }
-  boolean hassameavg(Generic<?> object){
-    return calavg()==object.calavg();
+
+  boolean sameavg(Car<?> Object) {
+    return calavg() == Object.calavg();
   }
 }
 
-public class pack {
+public class Solution {
   public static void main(String[] args) {
-      Integer[] intnum1={1,2,3,4,5};
-      Generic<Integer> intcalc1=new Generic<>(intnum1);
-      System.out.println(intcalc1.calavg());
+    Integer[] num1 = { 100, 120, 140, 160, 200 };
+    Car<Integer> car1 = new Car<>(num1);
 
-      Double[] intnum2={6.0,2.5,3.0,4.0,5.0};
-      Generic<Double> intcalc2=new Generic<>(intnum2);
-      System.out.println(intcalc2.calavg());
+    Double[] num2 = { 100.0, 120.0, 140.0, 160.0, 250.0 };
+    Car<Double> car2 = new Car<>(num2);
 
-      System.out.println(intcalc1.hassameavg(intcalc2));
+    System.out.println(car1.sameavg(car2));
   }
 }
