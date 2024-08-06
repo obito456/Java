@@ -1,20 +1,18 @@
-class Animal<X extends Lion & Wild> {
+class Animal<X extends Predator & Wild> {
   X name;
 
   public Animal(X name) {
     this.name = name;
-  }
-  public X getAnimal() {
-    return name;
   }
   public void hunt(){
     name.hunt();
   }
 }
 
-class Lion implements Wild{
+class Predator implements Wild{
+  String name="Tiger";
   public void hunt() {
-    System.out.println("Lion is a wild animal");
+    System.out.println(name+" is a wild animal");
   }
 }
 interface Wild {
@@ -23,7 +21,7 @@ interface Wild {
 
 public class Solution {
   public static void main(String[] args) {
-    Animal<Lion> animal = new Animal<>(new Lion());
+    Animal<Predator> animal = new Animal<>(new Predator());
     animal.hunt();
   }
 }
