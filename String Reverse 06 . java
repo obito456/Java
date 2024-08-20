@@ -1,0 +1,15 @@
+public class Solution {
+    public static String rev(String s) {
+        if (s.isEmpty()) {
+            return s;
+        }
+        return rev(s.substring(1)) + s.charAt(0);
+    }
+    public static void main(String[] args) {
+
+        String s = "vijaykumar";
+        String r = rev(s);
+        s=r;
+        System.out.println(s);
+    }
+}
