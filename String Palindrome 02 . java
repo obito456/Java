@@ -1,0 +1,17 @@
+public class Solution {
+    public static boolean pal(String s,int i){
+        if(i>=s.length()/2){
+            return true;
+        }
+        if(Character.toLowerCase(s.charAt(i))!=Character.toLowerCase(s.charAt(s.length()-1-i))){
+            return false;
+        }
+        else{
+            return pal(s, i+1);
+        }
+    }
+    public static void main(String[] args) {
+        String s = "Vijay";
+        System.out.println(pal(s,0));
+    }
+}
