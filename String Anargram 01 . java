@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Solution {
+    public static String sorts(String s){
+        char[] ch=s.toCharArray();
+        Arrays.sort(ch);
+        return new String(ch);
+    }
+    public static boolean anargram(String s1,String s2) {
+        if(s1.length()!=s2.length()){
+            return false;
+        }
+        s1=sorts(s1);
+        s2=sorts(s2);
+
+        for(int i=0;i<s1.length();i++){
+            if(s1.charAt(i)!=s2.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+
+        String s1 = "vijay";
+        String s2 = "yajiv";
+        System.out.println(anargram(s1,s2));  
+    }
+}
