@@ -39,21 +39,6 @@ class Node {
       return false;
     }
   }
-
-  public static void sumreplace(Node root){
-    if(root==null){
-      return;
-    }
-    sumreplace(root.left);
-    sumreplace(root.right);
-
-    if(root.left!=null){
-      root.data=root.data+root.left.data;
-    }
-    if(root.right!=null){
-      root.data=root.data+root.right.data;
-    }
-  }
 }
 
 public class Solution {
