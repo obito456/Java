@@ -1,59 +1,50 @@
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-class Customer implements Comparable<Customer>{
-    private Integer orderid;
-    private int amount;
-    private String customerName;
+class Customer implements Comparable<Customer> {
+    Integer orderid;
+    String item;
+    String name;
 
-    public Customer(Integer orderid,int amount,String customerName){
-        this.orderid=orderid;
-        this.amount=amount;
-        this.customerName=customerName;
+    public Customer(Integer orderid, String item, String name) {
+        this.orderid = orderid;
+        this.item = item;
+        this.name = name;
     }
 
-    public void setorderid(int orderid){
-        this.orderid=orderid;
-    }
-    public int getorderid(){
-        return orderid;
-    }
-    public void setamount(int amount){
-        this.amount=amount;
-    }
-    public int getamount(){
-        return amount;
-    }
-    public void customerName(String customerName){
-        this.customerName=customerName;
-    }
-    public String getcustomerName(){
-        return customerName;
+    public String order() {
+        return "Customer{" + "orderid=" + orderid + ", item='" + item + '\'' + ", customerName='" + name + '\'' + '}';
     }
 
     @Override
-    public String toString(){
-        return "Customer{" +"orderid="+orderid+",amount="+amount+",customerName='"+customerName+'\''+'}';
+    public int compareTo(Customer o) {
+        return this.orderid.compareTo(o.orderid);
     }
 
     @Override
-    public int compareTo(Customer o){
-        return o.orderid>this.orderid ? 1 : -1;
+    public String toString() {
+        return "Customer{" +
+                "orderid=" + orderid +
+                ", item='" + item + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
 
-
 public class Solution {
     public static void main(String[] args) {
-        Queue<Customer> customers=new PriorityQueue<>();
+        Queue<Customer> customers = new PriorityQueue<>();
 
-        customers.add(new Customer(6, 50, "VIJAY"));
-        customers.add(new Customer(1, 510, "JAY"));
-        customers.add(new Customer(6, 110, "AJAY"));
-        customers.add(new Customer(6, 350, "JAYANTH"));
+        customers.add(new Customer(3, "dosa", "vijay"));
+        customers.add(new Customer(1, "idly", "sai"));
+        customers.add(new Customer(2, "pury", "chandu"));
+        customers.add(new Customer(4, "bonda", "satish"));
 
         System.out.println(customers);
-        System.out.println(customers.poll());
-        System.out.println(customers);
+        System.out.println("Processing customer: " + customers.poll());
+        System.out.println("Remaining customers in queue: " + customers);
+
+        System.out.println("Processing customer: " + customers.poll());
+        System.out.println("Remaining customers in queue: " + customers);
     }
 }
