@@ -1,29 +1,44 @@
-class Node{
+class Node {
     int data;
     Node next;
 
-    Node(int data1,Node next1){
-        this.data=data1;
-        this.next=next1;
-    }
-
-    Node(int data1){
-        this.data=data1;
-        this.next=null;
+    Node(int val) {
+        data = val;
+        next = null;
     }
 }
 
-public class pack {
+class Solution{
+    Node head;
 
-    public static void main(String[] args){
+    public void insertAtHead(int val){
+        Node n=new Node(val);
 
-    int[] arr={1,2,3,4};
-    int n=arr.length;
-
-    for(int i=0;i<n;i++){
-        Node a=new Node(arr[i]); 
-        System.out.print(a.data+"->");
+        if(head==null){
+            head=n;
+            return;
+        }
+        n.next=head;
+        head=n;  
     }
 
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        Node head=null;
+        Solution linkedList = new Solution();
+        linkedList.insertAtHead(4);
+        linkedList.insertAtHead(3);
+        linkedList.insertAtHead(2);
+        linkedList.insertAtHead(1);
+        linkedList.insertAtHead(0);
+        linkedList.display();
     }
 }
