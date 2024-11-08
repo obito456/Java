@@ -25,5 +25,7 @@ public class Solution{
         Comparator<Student> idComparator = Comparator.comparing(s->s.id);
         students.sort(idComparator);
         System.out.println("After sorting: " + students);
+        students.sort(idComparator.reversed());
+        System.out.println("After reversing: " + students);
     }
 }
