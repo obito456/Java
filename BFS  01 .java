@@ -17,23 +17,20 @@ class Graph {
         adjList.get(destination).add(source);
     }
 
-    // BFS algorithm
     public void bfs(int start) {
-        Set<Integer> visited = new HashSet<>(); // Set to track visited nodes
-        Queue<Integer> queue = new LinkedList<>(); // Queue for BFS
-
-        visited.add(start); // Mark the starting node as visited
-        queue.offer(start); // Enqueue the starting node
+        Set<Integer> visited = new HashSet<>(); 
+        Queue<Integer> queue = new LinkedList<>(); 
+        visited.add(start); 
+        queue.offer(start);
 
         while (!queue.isEmpty()) {
-            int node = queue.poll(); // Dequeue a vertex from queue
-            System.out.print(node + " "); // Print the dequeued vertex
+            int node = queue.poll(); 
+            System.out.print(node + " ");
 
-            // Get all adjacent vertices of the dequeued vertex
             for (int adjacent : adjList.get(node)) {
-                if (!visited.contains(adjacent)) { // If not visited
-                    visited.add(adjacent); // Mark it visited
-                    queue.offer(adjacent); // Enqueue it
+                if (!visited.contains(adjacent)) {
+                    visited.add(adjacent);
+                    queue.offer(adjacent);
                 }
             }
         }
