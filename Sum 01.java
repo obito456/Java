@@ -1,12 +1,12 @@
 public class Solution {
     public static void main(String[] args) {
-        int x = 123;
+        int num = 123;
         int sum=0;
 
-        while(x>0){
-            int last=x%10;
+        while(num>0){
+            int last=num%10;
             sum=sum+last;
-            x=x/10;
+            num=num/10;
         }
         System.out.println(sum);
     }
