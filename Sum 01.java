@@ -3,10 +3,11 @@ public class Solution {
         int x = 123;
         int sum=0;
 
-        for(int i=0;i<=x.length;i++){
+        while(x>0){
             int last=x%10;
             sum=sum+last;
+            x=x/10;
         }
-
+        System.out.println(sum);
     }
 }
