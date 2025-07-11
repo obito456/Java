@@ -9,3 +9,6 @@ public class Solution {
         System.out.println(s);
     }
 }
+
+//  Time=0(n)
+//  Space=0(n)
