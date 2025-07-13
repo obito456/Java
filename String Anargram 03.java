@@ -1,31 +1,28 @@
-
 public class Solution {
-    public static boolean isanargram(String a,String b) {
-        if(a.length()!=b.length()){
-            return  false;
+    public static boolean anagram(String s1,String s2){
+        if(s1.length()!=s2.length()){
+            return false;
         }
-        a=a.toLowerCase();
-        b=b.toLowerCase();
-        int[] freq=new int[26];
-
-        for(int i=0;i<a.length();i++){
-            freq[a.charAt(i)-'a']++;
-            freq[b.charAt(i)-'a']--;
+        s1=s1.toLowerCase();
+        s2=s2.toLowerCase();
+        int[] freq =new int[256];
+        for(int i=0;i<s1.length();i++){
+            freq[s1.charAt(i)-'a']++;
+            freq[s2.charAt(i)-'a']--;
         }
-        for(int count:freq){
-            if(count!=0){
+        for(int num:freq){
+            if(num!=0){
                 return false;
             }
         }
         return true;
-    }
+    }  
     public static void main(String[] args) {
-        String a="move";
-        String b="mole";
-        boolean isanargram=isanargram(a, b);
-        System.out.println(isanargram);
-    }
+        String s1 ="Three" ;
+        String s2 ="There" ;
+        System.out.println(anagram(s1,s2));  
+    }  
 }
 
-//  Time=0(n)
-//  Space=0(1)
+//  Time=0(n)  listen,silent
+//  Space=0(n)
